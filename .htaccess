@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteBase /
+ErrorDocument 401 /error.html
+ErrorDocument 403 /error.html
+ErrorDocument 404 /error.html
+Options -Indexes

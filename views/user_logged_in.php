@@ -1,0 +1,1 @@
+very <b><?php echo $_SESSION['user_name']; ?></b> • <a href="../index.php?logout">bye bye</a>
