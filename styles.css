@@ -56,6 +56,14 @@ body {
 	color: #30FFD6;
 	display: inline-block;
 }
+.suchlikes {
+	display: block;
+	padding: 10px;
+}
+.much-like {
+	display: inline-block;
+	padding: 5px;
+}
 .ourinfo {
 	display:block;
 	position:absolute;
@@ -79,11 +87,6 @@ body {
 }
 .ourinfo a:hover {
 	color: #FF3399;
-}
-.feedback {
-	font-style: italic;
-	font-size:12px;
-	padding-top: 5px;
 }
 .login_input, .styled_input {
 	/* http://code.tiffbits.com/css3-form-styling-cheat-sheet/ */
@@ -116,13 +119,19 @@ body {
 .styled-button:hover, .styled-button:focus {
 	background: #de7387;
 }
+.options_padded_r {
+	padding-right: 40px;
+}
+#login_form, #registration_form, #options_menu  {
+	padding-top: 8px;
+}
 #such_options {
 	cursor:pointer;
 	width:auto;
 	position:absolute;
 	font-size:15px;
 	top:0px;
-	padding:14px 50px 14px 22px;
+	padding:14px 15px 14px 30px;
 	right:0px;
 	text-align:right;
 	color: #FFFF75;
@@ -139,24 +148,10 @@ body {
 #such_options a:hover {
 	color:#FF5CFF;
 }
-#login {
-	cursor:pointer;
-	width:auto;
-	position:absolute;
-	font-size:15px;
-	top:0px;
-	padding:14px;
-	left:0px;
-	text-align:left;
-	color: #FFFF75;
-	background-color:rgba(0,0,0,0.2);
-}
-#login a {
-	color: #FFFF75;
-	text-decoration: none;
-}
-#login a:hover {
-	color:#FF5CFF;
+#feedback {
+	font-style: italic;
+	font-size: 12px;
+	padding-top: 5px;
 }
 #suchsecrets {
 	display: none;

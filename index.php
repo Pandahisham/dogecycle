@@ -51,23 +51,26 @@ if ($login->isUserLoggedIn() == true)
         <link href="styles.css" rel="stylesheet" text="text/css" />
     </head>
     <body class="bg">
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div class="suchlikes">
+			<div class="fb-like much-like" style="position:relative;top:-5px;" data-href="http://dogecycle.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+			<div class="tw-like much-like"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://dogecycle.com/" data-text="wow such period tracking" data-hashtags="dogecycle, doge">Tweet</a>
+			</div>
+		</div>
 		<div id="suchsecrets"><?php include("cycle.php"); ?></div>
-        <div id="login">
-		<?php
-			if ($login->isUserLoggedIn() == true)
-				include("./views/user_logged_in.php");
-			else {
-				$registration = new Registration();
-				include("./views/user_not_logged_in.php");
-			}
-		?>
-        </div>
         <div id="such_options">
 		<?php
 			if ($login->isUserLoggedIn() == true)
-				include("./views/options_logged_in.php");
+				include("./views/logged_in.php");
 			else
-				include("./views/options_not_logged_in.php");
+				include("./views/not_logged_in.php");
 		?>
         </div>
         <div class="container">
@@ -80,9 +83,9 @@ if ($login->isUserLoggedIn() == true)
         </div>
         <div class="ourinfo"> wow <a href="https://github.com/itdelatrisu/dogecycle" target="_blank">github</a> such <a href="http://dogeweather.com/" target="_blank">inspired</a>
         </div>
-        
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="./jquery-1.9.0.min.js"><\/script>')</script>
         <script src="./main.js"></script>
-    </body>
+	</body>
 </html>

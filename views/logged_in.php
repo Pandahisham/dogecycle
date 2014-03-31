@@ -7,7 +7,8 @@ function toggleOptions() {
 }
 </script>
 
-<a onClick="toggleOptions();return false;" href="">such options</a>
+<div class="options_padded_r">very <b><?php echo $_SESSION['user_name']; ?></b> • <a href="../index.php?logout">bye bye</a></div>
+<div id="options_menu"><a onClick="toggleOptions();return false;" style="font-style: italic; padding-top: 10px;" href="">↓ such options ↓</a></div>
 <div id="options" style="display:none;">
 	<br />
 	<form method="post" action="">
@@ -146,6 +147,7 @@ function toggleOptions() {
 
 		</table>
 		<br />
+		<br />
 		<input type="submit" class="styled-button" value="add period" name="add_cycle">
 	</form>
 	<br />
@@ -171,6 +173,7 @@ function toggleOptions() {
 		</select>
 		</td>
 		</table>
+		<br />
 		<br />
 		<input type="submit" class="styled-button" value="delete period" name="delete_cycle">
 	</form>

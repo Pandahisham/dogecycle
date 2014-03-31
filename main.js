@@ -31,6 +31,9 @@ else if (day > 40)  $('#cycle-day').text(muchrandom(dogefix) + ' pain cycle day 
 else                $('#cycle-day').text('cycle day ' + day);
 if (avg > 0.0)      $('#cycle-avg').text('average cycle ' + avg + ' days');
 
+$(".suchlikes").show();
+$(".ourinfo").show();
+
 // so text
 if (veryimg == '01.png') {
 	var sofirst   = "joy";
@@ -86,7 +89,7 @@ if (veryimg == '01.png') {
 		var sosecond  = "secure";
 		var sothird   = "cycle";
 		var sofourth  = "privacy";
-		var sofifth   = "menstruation";
+		var sofifth   = "female reproductive system";
 		var sosixth   = "blood";
 		var soseventh = "periods";
 	}
@@ -109,6 +112,6 @@ $('.such.overlay').append(
 		+ muchrandom(dogefix) + ' ' + muchrandom(tings) + 
 	'</span>');
 	var suchnumber = $("span").length;
-	if (suchnumber > 8)
+	if (suchnumber > 6)
 		$('.such span:nth-child(1)').remove();
 }, 2300);

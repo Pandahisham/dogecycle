@@ -7,13 +7,12 @@ function toggleForm(such, doge) {
 			document.getElementById('login_input_username').focus();
 	} else
 		document.getElementById(such).style.display = 'none';
-	document.getElementById('user_feedback').style.display = 'none';
+	document.getElementById('feedback').style.display = 'none';
 }
 </script>
 
-<b><a onClick="toggleForm('login_form','registration_form');return false;" href="">login</a></b> • <a onClick="toggleForm('registration_form','login_form');return false;" href="">register</a>
-
-<div class="feedback" id="user_feedback">
+<div class="options_padded_r"><b><a onClick="toggleForm('login_form','registration_form');return false;" href="">login</a></b> • <a onClick="toggleForm('registration_form','login_form');return false;" href="">register</a></div>
+<div id="feedback">
 <?php
 if (isset($login)) {
     if ($login->errors) {
