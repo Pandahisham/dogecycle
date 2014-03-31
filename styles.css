@@ -56,14 +56,6 @@ body {
 	color: #30FFD6;
 	display: inline-block;
 }
-.suchlikes {
-	display:block;
-	padding: 10px;
-}
-.much-like {
-	display:inline-block;
-	padding:5px;
-}
 .ourinfo {
 	display:block;
 	position:absolute;
@@ -123,9 +115,6 @@ body {
 }
 .styled-button:hover, .styled-button:focus {
 	background: #de7387;
-}
-.selectClass {
-	font-family:Comic Sans MS, Comic Sans, Chalkboard, Helvetica, Arial, sans-serif;
 }
 #such_options {
 	cursor:pointer;

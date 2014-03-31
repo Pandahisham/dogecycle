@@ -83,7 +83,7 @@ if (veryimg == '01.png') {
 		var soseventh = "confuse";
 	} else {  // not logged in
 		var sofirst   = "doge";
-		var sosecond  = "excite";
+		var sosecond  = "secure";
 		var sothird   = "cycle";
 		var sofourth  = "privacy";
 		var sofifth   = "menstruation";

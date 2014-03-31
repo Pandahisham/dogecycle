@@ -9,9 +9,9 @@ if (isset($_POST['add_cycle'])) {
 
 	$start_date_value = "$start_year-$start_month-$start_day";
 	if ($end_month == '00' or $end_day == '00')
-		$end_date_value   = "0000-00-00";
+		$end_date_value = "0000-00-00";
 	else
-		$end_date_value   = "$end_year-$end_month-$end_day";
+		$end_date_value = "$end_year-$end_month-$end_day";
 
 	if (checkdate(intval($start_month), intval($start_day), intval($start_year)) and  // such fake
 		(strtotime($start_date_value) <= time() and strtotime($end_date_value) <= time()) and  // wow foresight

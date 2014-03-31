@@ -41,13 +41,11 @@ if (isset($registration)) {
 
 <div id="login_form" style="display:none;">
 <form method="post" action="index.php" name="loginform">
-    <label for="login_input_username">username</label>
-    <input id="login_input_username" class="login_input" type="text" name="user_name" required />
-	<br />
-    <label for="login_input_password">password</label>
-    <input id="login_input_password" class="login_input" type="password" name="user_password" autocomplete="off" required />
-	<br />
-    <input type="submit" class="styled-button" name="login" value="wow" />
+	<table>
+		<tr><td>username</td><td><input id="login_input_username" class="login_input" type="text" name="user_name" required /></td></tr>
+		<tr><td>password</td><td><input id="login_input_password" class="login_input" type="password" name="user_password" autocomplete="off" required /></tr>
+	</table>
+    <input type="submit" class="styled-button" style="float: right;" name="login" value="wow" />
 </form>
 </div>
 <div id="registration_form" style="display:none;">

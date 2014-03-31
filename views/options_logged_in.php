@@ -28,9 +28,9 @@ function toggleOptions() {
 
 	<form method="post" action="">
 		start blood<br />
-		<table border="0" cellspacing="0">
+		<table border="0" cellspacing="0" align="right">
 		<tr><td align=left>
-		<select class="selectClass" name="start_month" value=''>
+		<select class="styled_input" name="start_month" value=''>
 		<option value='01'>January</option>
 		<option value='02'>February</option>
 		<option value='03'>March</option>
@@ -46,7 +46,7 @@ function toggleOptions() {
 		</select>
 
 		</td><td align=left>   
-		<select class="selectClass" name="start_day">
+		<select class="styled_input" name="start_day">
 		<option value='01'>01</option>
 		<option value='02'>02</option>
 		<option value='03'>03</option>
@@ -83,11 +83,13 @@ function toggleOptions() {
 		</td><td align=left>
 		<input type="text" pattern="[0-9]{4}" class="styled_input" name="start_year" size=4 value="<?php echo date('Y'); ?>" required>
 		</table>
+		<br />
+		<br />
 
 		end blood<br />
-		<table border="0" cellspacing="0">
+		<table border="0" cellspacing="0" align="right">
 		<tr><td align=left>
-		<select class="selectClass" name="end_month" value=''>
+		<select class="styled_input" name="end_month" value=''>
 		<option value='00'>--</option>
 		<option value='01'>January</option>
 		<option value='02'>February</option>
@@ -104,7 +106,7 @@ function toggleOptions() {
 		</select>
 
 		</td><td align=left>   
-		<select class="selectClass" name="end_day">
+		<select class="styled_input" name="end_day">
 		<option value='00'>--</option>
 		<option value='01'>01</option>
 		<option value='02'>02</option>
@@ -140,33 +142,36 @@ function toggleOptions() {
 		</select>
 
 		</td><td align=left>
-		<input type="text" pattern="[0-9]{4}" class="styled_input" name="end_year" size=4 value="0000" required>
+		<input type="text" pattern="[0-9]{4}" class="styled_input" name="end_year" size=4 placeholder="0000" required>
 
-		<br />
 		</table>
+		<br />
 		<input type="submit" class="styled-button" value="add period" name="add_cycle">
 	</form>
 	<br />
 
-	<form method="post" action="">
-	suffering
-	<table border="0" cellspacing="0">
+	<form onSubmit="return confirm('much caution erase period no return');" method="post" action="">
+	suffering<br />
+	<table border="0" cellspacing="0" align="right">
 		<tr><td align=left>
-		<select class="selectClass" name="cycle" value=''>
+		<select class="styled_input" name="cycle" value=''>
 		<?php
 			$sql = "SELECT start, end FROM cycles WHERE user_name = '" . $_SESSION['user_name'] . "' ORDER BY start DESC;";
 			$db_connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 			if (!mysqli_connect_errno()) {
 				$result = mysqli_query($db_connection, $sql);
 				while ($row = mysqli_fetch_array($result))
-					echo "<option value='" . $row['start'] . "_" . $row['end'] . "'>" . $row['start'] . " ~ " . $row['end'] . "</option>";
+					printf("<option value='%s_%s'>%s ~ %s</option>",
+					       $row['start'], $row['end'],
+					       date("F j, Y", strtotime($row['start'])),
+					       ($row['end'] == '0000-00-00') ? "current suffering" : date("F j, Y", strtotime($row['end'])));
 				mysqli_close($con);
 			}
 		?>
 		</select>
 		</td>
-		<br />
 		</table>
+		<br />
 		<input type="submit" class="styled-button" value="delete period" name="delete_cycle">
 	</form>
 </div>

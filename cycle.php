@@ -56,6 +56,6 @@ function get_cycle() {
 if ($login->isUserLoggedIn() == true)
 	echo json_encode(get_cycle());
 else
-	echo json_encode(array('day' => '-2', 'type' => 'doge', 'img' => 'doge-regular.png'));
+	echo json_encode(array('day' => '-2', 'avg' => '0.0', 'type' => 'doge', 'img' => 'doge-regular.png'));
 
 ?>
