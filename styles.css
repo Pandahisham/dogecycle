@@ -119,10 +119,10 @@ body {
 .styled-button:hover, .styled-button:focus {
 	background: #de7387;
 }
-.options_padded_r {
+.padded_right {
 	padding-right: 40px;
 }
-#login_form, #registration_form, #options_menu  {
+#login_form, #registration_form, #options  {
 	padding-top: 8px;
 }
 #such_options {

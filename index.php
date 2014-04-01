@@ -1,16 +1,4 @@
 <?php
-
-/**
- * A simple, clean and secure PHP Login Script / MINIMAL VERSION
- * For more versions (one-file, advanced, framework-like) visit http://www.php-login.net
- *
- * Uses PHP SESSIONS, modern password-hashing and salting and gives the basic functions a proper login system needs.
- *
- * @author Panique
- * @link https://github.com/panique/php-login-minimal/
- * @license http://opensource.org/licenses/MIT MIT License
- */
-
 // checking for minimum PHP version
 if (version_compare(PHP_VERSION, '5.3.7', '<')) {
     exit("Sorry, Simple PHP Login does not run on a PHP version smaller than 5.3.7 !");
@@ -61,18 +49,15 @@ if ($login->isUserLoggedIn() == true)
 		}(document, 'script', 'facebook-jssdk'));</script>
 		<div class="suchlikes">
 			<div class="fb-like much-like" style="position:relative;top:-5px;" data-href="http://dogecycle.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
-			<div class="tw-like much-like"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://dogecycle.com/" data-text="wow such period tracking" data-hashtags="dogecycle, doge">Tweet</a>
+			<div class="tw-like much-like"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://dogecycle.com/" data-text="wow such period tracking" data-hashtags="dogecycle, doge"></a>
 			</div>
 		</div>
-		<div id="suchsecrets"><?php include("cycle.php"); ?></div>
-        <div id="such_options">
 		<?php
 			if ($login->isUserLoggedIn() == true)
 				include("./views/logged_in.php");
 			else
 				include("./views/not_logged_in.php");
 		?>
-        </div>
         <div class="container">
             <div class="doge-image"></div>
             <div id="all-cycle">
@@ -83,6 +68,8 @@ if ($login->isUserLoggedIn() == true)
         </div>
         <div class="ourinfo"> wow <a href="https://github.com/itdelatrisu/dogecycle" target="_blank">github</a> such <a href="http://dogeweather.com/" target="_blank">inspired</a>
         </div>
+		<div id="suchsecrets"><?php include("cycle.php"); ?>
+		</div>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="./jquery-1.9.0.min.js"><\/script>')</script>

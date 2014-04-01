@@ -1,14 +1,5 @@
-<script>
-function toggleOptions() {
-	if (document.getElementById('options').style.display == 'none')
-		document.getElementById('options').style.display='';
-	else
-		document.getElementById('options').style.display='none';
-}
-</script>
-
-<div class="options_padded_r">very <b><?php echo $_SESSION['user_name']; ?></b> • <a href="../index.php?logout">bye bye</a></div>
-<div id="options_menu"><a onClick="toggleOptions();return false;" style="font-style: italic; padding-top: 10px;" href="">↓ such options ↓</a></div>
+<div id="such_options" onMouseOver="document.getElementById('options').style.display='';" onMouseOut="document.getElementById('options').style.display='none';">
+<div class="padded_right">very <b><?php echo $_SESSION['user_name']; ?></b> • <a href="../index.php?logout">bye bye</a></div>
 <div id="options" style="display:none;">
 	<br />
 	<form method="post" action="">
@@ -26,135 +17,16 @@ function toggleOptions() {
 		?>>
 	</form>
 	<br />
-
 	<form method="post" action="">
-		start blood<br />
-		<table border="0" cellspacing="0" align="right">
-		<tr><td align=left>
-		<select class="styled_input" name="start_month" value=''>
-		<option value='01'>January</option>
-		<option value='02'>February</option>
-		<option value='03'>March</option>
-		<option value='04'>April</option>
-		<option value='05'>May</option>
-		<option value='06'>June</option>
-		<option value='07'>July</option>
-		<option value='08'>August</option>
-		<option value='09'>September</option>
-		<option value='10'>October</option>
-		<option value='11'>November</option>
-		<option value='12'>December</option>
-		</select>
-
-		</td><td align=left>   
-		<select class="styled_input" name="start_day">
-		<option value='01'>01</option>
-		<option value='02'>02</option>
-		<option value='03'>03</option>
-		<option value='04'>04</option>
-		<option value='05'>05</option>
-		<option value='06'>06</option>
-		<option value='07'>07</option>
-		<option value='08'>08</option>
-		<option value='09'>09</option>
-		<option value='10'>10</option>
-		<option value='11'>11</option>
-		<option value='12'>12</option>
-		<option value='13'>13</option>
-		<option value='14'>14</option>
-		<option value='15'>15</option>
-		<option value='16'>16</option>
-		<option value='17'>17</option>
-		<option value='18'>18</option>
-		<option value='19'>19</option>
-		<option value='20'>20</option>
-		<option value='21'>21</option>
-		<option value='22'>22</option>
-		<option value='23'>23</option>
-		<option value='24'>24</option>
-		<option value='25'>25</option>
-		<option value='26'>26</option>
-		<option value='27'>27</option>
-		<option value='28'>28</option>
-		<option value='29'>29</option>
-		<option value='30'>30</option>
-		<option value='31'>31</option>
-		</select>
-
-		</td><td align=left>
-		<input type="text" pattern="[0-9]{4}" class="styled_input" name="start_year" size=4 value="<?php echo date('Y'); ?>" required>
-		</table>
-		<br />
-		<br />
-
-		end blood<br />
-		<table border="0" cellspacing="0" align="right">
-		<tr><td align=left>
-		<select class="styled_input" name="end_month" value=''>
-		<option value='00'>--</option>
-		<option value='01'>January</option>
-		<option value='02'>February</option>
-		<option value='03'>March</option>
-		<option value='04'>April</option>
-		<option value='05'>May</option>
-		<option value='06'>June</option>
-		<option value='07'>July</option>
-		<option value='08'>August</option>
-		<option value='09'>September</option>
-		<option value='10'>October</option>
-		<option value='11'>November</option>
-		<option value='12'>December</option>
-		</select>
-
-		</td><td align=left>   
-		<select class="styled_input" name="end_day">
-		<option value='00'>--</option>
-		<option value='01'>01</option>
-		<option value='02'>02</option>
-		<option value='03'>03</option>
-		<option value='04'>04</option>
-		<option value='05'>05</option>
-		<option value='06'>06</option>
-		<option value='07'>07</option>
-		<option value='08'>08</option>
-		<option value='09'>09</option>
-		<option value='10'>10</option>
-		<option value='11'>11</option>
-		<option value='12'>12</option>
-		<option value='13'>13</option>
-		<option value='14'>14</option>
-		<option value='15'>15</option>
-		<option value='16'>16</option>
-		<option value='17'>17</option>
-		<option value='18'>18</option>
-		<option value='19'>19</option>
-		<option value='20'>20</option>
-		<option value='21'>21</option>
-		<option value='22'>22</option>
-		<option value='23'>23</option>
-		<option value='24'>24</option>
-		<option value='25'>25</option>
-		<option value='26'>26</option>
-		<option value='27'>27</option>
-		<option value='28'>28</option>
-		<option value='29'>29</option>
-		<option value='30'>30</option>
-		<option value='31'>31</option>
-		</select>
-
-		</td><td align=left>
-		<input type="text" pattern="[0-9]{4}" class="styled_input" name="end_year" size=4 placeholder="0000" required>
-
-		</table>
-		<br />
-		<br />
+		start blood <input type="date" class="styled_input" name="start_date" required><br />
+		end blood <input type="date" class="styled_input" name="end_date"><br />
 		<input type="submit" class="styled-button" value="add period" name="add_cycle">
 	</form>
 	<br />
 
 	<form onSubmit="return confirm('much caution erase period no return');" method="post" action="">
-	suffering<br />
-	<table border="0" cellspacing="0" align="right">
+		suffering<br />
+		<table border="0" cellspacing="0" align="right">
 		<tr><td align=left>
 		<select class="styled_input" name="cycle" value=''>
 		<?php
@@ -177,4 +49,5 @@ function toggleOptions() {
 		<br />
 		<input type="submit" class="styled-button" value="delete period" name="delete_cycle">
 	</form>
+</div>
 </div>

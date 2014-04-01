@@ -1,20 +1,12 @@
 <?php
 if (isset($_POST['add_cycle'])) {
-	$start_month = $_POST['start_month'];
-	$start_day   = $_POST['start_day'];
-	$start_year  = $_POST['start_year'];
-	$end_month   = $_POST['end_month'];
-	$end_day     = $_POST['end_day'];
-	$end_year    = $_POST['end_year'];
-
-	$start_date_value = "$start_year-$start_month-$start_day";
-	if ($end_month == '00' or $end_day == '00')
-		$end_date_value = "0000-00-00";
+	$start_date_value = $_POST['start_date'];
+	if (strlen($_POST['end_date']))
+		$end_date_value = $_POST['end_date'];
 	else
-		$end_date_value = "$end_year-$end_month-$end_day";
+		$end_date_value = "0000-00-00";
 
-	if (checkdate(intval($start_month), intval($start_day), intval($start_year)) and  // such fake
-		(strtotime($start_date_value) <= time() and strtotime($end_date_value) <= time()) and  // wow foresight
+	if ((strtotime($start_date_value) <= time() and strtotime($end_date_value) <= time()) and  // wow foresight
 		($start_date_value < $end_date_value or $end_date_value == "0000-00-00")) {
 		$db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 		if (!mysqli_connect_errno()) {
@@ -23,15 +15,15 @@ if (isset($_POST['add_cycle'])) {
 				$result = $db_connection->query($sql);
 				$row = mysqli_fetch_array($result);
 				if ($row[0] == '0') {  // only one period pls :(
-					$sql = "SELECT COUNT(*) FROM cycles WHERE user_name = '" . $_SESSION['user_name'] . "' AND end > '" . $start_date_value . "';";
+					$sql = "SELECT COUNT(*) FROM cycles WHERE user_name = '" . $_SESSION['user_name'] . "' AND end >= '" . $start_date_value . "';";
 					$result = $db_connection->query($sql);
 					$row = mysqli_fetch_array($result);
-					if ($row[0] == '0') {  // no magic retroactive periods
+					if ($row[0] == '0') {  // no magic retroactive or successive periods
 						$sql = "INSERT INTO cycles VALUES ('" . $_SESSION['user_name'] . "', '" . $start_date_value . "', '" . $end_date_value . "');";
 						$db_connection->query($sql);
 					}
 				}
-			} else if (checkdate(intval($end_month), intval($end_day), intval($end_year))) {
+			} else {
 				$sql = "SELECT COUNT(*) FROM cycles WHERE user_name = '" . $_SESSION['user_name'] . "' AND ('" .
 					   $start_date_value . "' BETWEEN start AND end OR '" .
 					   $end_date_value   . "' BETWEEN start AND end OR ('" .
