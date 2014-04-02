@@ -101,6 +101,10 @@ class Registration
 
                     // if user has been added successfully
                     if ($query_new_user_insert) {
+                        $_SESSION['user_name'] = $user_name;
+                        $_SESSION['user_email'] = $user_email;
+                        $_SESSION['user_login_status'] = 1;
+
                         $this->messages[] = "very success";
                     } else {
                         $this->errors[] = "very failure";

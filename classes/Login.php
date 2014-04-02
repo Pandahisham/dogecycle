@@ -109,7 +109,6 @@ class Login
         session_destroy();
         // return a little feeedback message
         //$this->messages[] = "bye bye";
-
     }
 
     /**

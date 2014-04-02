@@ -15,13 +15,15 @@ require_once("./config/db.php");
 require_once("./classes/Login.php");
 require_once("./classes/Registration.php");
 
-// create a login and registration object. when this object is created, it will do all login/logout stuff
+// create a login object. when this object is created, it will do all login/logout stuff
 // automatically so this single line handles the entire login process. in consequence, you can simply ...
 $login = new Login();
 
 // add and delete cycles post
 if ($login->isUserLoggedIn() == true)
 	include_once("./post.php");
+else
+	$registration = new Registration();
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -62,10 +64,8 @@ if ($login->isUserLoggedIn() == true)
 		<?php
 			if ($login->isUserLoggedIn() == true)
 				include("./views/logged_in.php");
-			else {
-				$registration = new Registration();
+			else
 				include("./views/not_logged_in.php");
-			}
 		?>
         <div class="container">
             <div class="doge-image"></div>
@@ -80,6 +80,7 @@ if ($login->isUserLoggedIn() == true)
 		<div id="suchsecrets"><?php include("cycle.php"); ?>
 		</div>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <script>if (typeof window.history.pushState == 'function') { window.history.pushState({}, "Hide", "./"); }</script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="./jquery-1.9.0.min.js"><\/script>')</script>
         <script src="./main.js"></script>
