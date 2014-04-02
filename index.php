@@ -36,6 +36,13 @@ if ($login->isUserLoggedIn() == true)
         <meta name="author" content="Persimmon Time" />
         <link rel="shortcut icon" href="./img/doge/favicon.png" type="image/png">
         <meta name="viewport" content="width=700">
+        <meta property="og:title" content="dogecycle" />
+        <meta property="og:url" content="http://dogecycle.com/" />
+        <meta property="og:description" content="menstrual cycle tracker" />
+        <meta property="og:image" content="http://dogecycle.com/img/fbdoge.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="600">
+        <meta property="og:image:height" content="600">
         <link href="styles.css" rel="stylesheet" text="text/css" />
     </head>
     <body class="bg">
