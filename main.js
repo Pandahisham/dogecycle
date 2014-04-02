@@ -68,7 +68,7 @@ if (veryimg == '01.png') {
 	var sosixth   = "libido";
 	var soseventh = "fertility";
 } else if (veryimg == '05.png') {
-	var sofirst   = "PMS";
+	var sofirst   = "pms";
 	var sosecond  = "cramps";
 	var sothird   = "mood swings";
 	var sofourth  = "unstable";

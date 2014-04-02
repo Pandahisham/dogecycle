@@ -26,9 +26,7 @@
 
 	<form onSubmit="return confirm('much caution erase period no return');" method="post" action="">
 		suffering<br />
-		<table border="0" cellspacing="0" align="right">
-		<tr><td align=left>
-		<select class="styled_input" name="cycle" value=''>
+		<select class="styled_input" name="cycle" value='' style="min-width: 50px;">
 		<?php
 			$sql = "SELECT start, end FROM cycles WHERE user_name = '" . $_SESSION['user_name'] . "' ORDER BY start DESC;";
 			$db_connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -43,9 +41,6 @@
 			}
 		?>
 		</select>
-		</td>
-		</table>
-		<br />
 		<br />
 		<input type="submit" class="styled-button" value="delete period" name="delete_cycle">
 	</form>

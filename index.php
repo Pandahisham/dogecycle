@@ -62,8 +62,10 @@ if ($login->isUserLoggedIn() == true)
 		<?php
 			if ($login->isUserLoggedIn() == true)
 				include("./views/logged_in.php");
-			else
+			else {
+				$registration = new Registration();
 				include("./views/not_logged_in.php");
+			}
 		?>
         <div class="container">
             <div class="doge-image"></div>
