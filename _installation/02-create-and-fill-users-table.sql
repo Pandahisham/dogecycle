@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `dogecycle`.`users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data';
 
 CREATE TABLE IF NOT EXISTS `dogecycle`.`cycles` (
-  `user_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s name, unique',
+  `user_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s name',
   `start` DATE COMMENT 'period start date',
   `end` DATE COMMENT 'period end date'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='user cycle data';

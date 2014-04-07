@@ -9,11 +9,6 @@ Authors
 * Karen Ouyang (https://github.com/kouyang)
 * Catherine Lu (https://github.com/erraticmusings)
 
-Credits
-===========
-* https://github.com/katiaeirin/dogeweather/
-* https://github.com/panique/php-login-minimal/
-
 Requirements
 ============
 * PHP 5.3.7+
@@ -24,6 +19,11 @@ Installation
 ============
 Create a database *login* and the table *users* via the SQL statements in the `_install` folder.  
 Change mySQL database user and password in `config/db.php` (*DB_USER* and *DB_PASS*).
+
+Credits
+===========
+* https://github.com/katiaeirin/dogeweather/
+* https://github.com/panique/php-login-minimal/
 
 License
 ===========

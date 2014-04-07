@@ -9,13 +9,13 @@ var suchcolors = [
 ];
 
 // such json
-var suchjson  = $("#suchsecrets").text();
+var suchjson  = $('#suchsecrets').text();
 var veryparse = $.parseJSON(suchjson);
 
 // very img
 var veryimg  = veryparse.img;
-var doge_img = "url(./img/doge/" + veryimg + ")";
-var bg_img   = "url(./img/bg/" + veryimg + ")";
+var doge_img = 'url(./img/doge/' + veryimg + ')';
+var bg_img   = 'url(./img/bg/' + veryimg + ')';
 $('.doge-image').css('background-image', doge_img);
 $('.bg').css('background-image', bg_img);
 
@@ -31,70 +31,24 @@ else if (day > 40)  $('#cycle-day').text(muchrandom(dogefix) + ' pain cycle day 
 else                $('#cycle-day').text('cycle day ' + day);
 if (avg > 0.0)      $('#cycle-avg').text('average cycle ' + avg + ' days');
 
-$(".suchlikes").show();
-$(".ourinfo").show();
+$('.suchlikes').show();
+$('.ourinfo').show();
 
 // so text
-if (veryimg == '01.png') {
-	var sofirst   = "joy";
-	var sosecond  = "relief";
-	var sothird   = "lovely";
-	var sofourth  = "flowers";
-	var sofifth   = "period conqueror";
-	var sosixth   = "festive";
-	var soseventh = "wonderful";
-} else if (veryimg == '02.png') {
-	var sofirst   = "blood";
-	var sosecond  = "waterfall";
-	var sothird   = "yuck";
-	var sofourth  = "dying";
-	var sofifth   = "suffer";
-	var sosixth   = "period";
-	var soseventh = "flow";
-} else if (veryimg == '03.png') {
-	var sofirst   = "pretty";
-	var sosecond  = "flowers";
-	var sothird   = "flowing hair";
-	var sofourth  = "okay";
-	var sofifth   = "ovulation";
-	var sosixth   = "estrogen";
-	var soseventh = "femininity";
-} else if (veryimg == '04.png') {
-	var sofirst   = "horny";
-	var sosecond  = "flowers";
-	var sothird   = "bra";
-	var sofourth  = "sex";
-	var sofifth   = "hormones";
-	var sosixth   = "libido";
-	var soseventh = "fertility";
-} else if (veryimg == '05.png') {
-	var sofirst   = "pms";
-	var sosecond  = "cramps";
-	var sothird   = "mood swings";
-	var sofourth  = "unstable";
-	var sofifth   = "feels";
-	var sosixth   = "terrify";
-	var soseventh = "emotions";
-} else {
-	if (day == -1) {  // no cycles
-		var sofirst   = "concern";
-		var sosecond  = "uh oh";
-		var sothird   = "not okay";
-		var sofourth  = "man";
-		var sofifth   = "danger";
-		var sosixth   = "ridiculous";
-		var soseventh = "confuse";
-	} else {  // not logged in
-		var sofirst   = "doge";
-		var sosecond  = "secure";
-		var sothird   = "cycle";
-		var sofourth  = "privacy";
-		var sofifth   = "female reproductive system";
-		var sosixth   = "blood";
-		var soseventh = "periods";
-	}
-}
-var tings = [sofirst, sosecond, sothird, sofourth, sofifth, sosixth, soseventh];
+if (veryimg == '01.png')
+	var tings = ['joy', 'relief', 'lovely', 'flowers', 'period conqueror', 'festive', 'wonderful'];
+else if (veryimg == '02.png')
+	var tings = ['blood', 'waterfall', 'yuck', 'dying', 'suffer', 'period', 'flow', 'endometrium', 'shedding', 'ew'];
+else if (veryimg == '03.png')
+	var tings = ['pretty', 'flowers', 'flowing hair', 'okay', 'ovulation', 'estrogen', 'femininity'];
+else if (veryimg == '04.png')
+	var tings = ['horny', 'flowers', 'bra', 'sex', 'hormones', 'libido', 'fertility'];
+else if (veryimg == '05.png')
+	var tings = ['pms', 'cramps', 'mood swings', 'unstable', 'feels', 'terrify', 'emotions', 'murder'];
+else if (day == -1)  // no cycles
+	var tings = ['concern', 'uh oh', 'not okay', 'man', 'danger', 'ridiculous', 'confuse', 'pregnant'];
+else  // not logged in
+	var tings = ['doge', 'secure', 'cycle', 'privacy', 'female reproductive system', 'blood', 'periods', 'amaze'];
 
 var very = doge.append('<div class="such overlay" />').children('.such.overlay').css({
 	position: 'fixed',
@@ -106,11 +60,11 @@ var very = doge.append('<div class="such overlay" />').children('.such.overlay')
 });
 
 interval = setInterval(function() {
-	
-$('.such.overlay').append(
-	'<span style="position: absolute; left: ' + Math.random()  *100 + '%;top: ' + Math.random()  *100 + '%;font-size: ' + Math.max(20, (Math.random() * 50 + 24)) + 'px; color:' + muchrandom(suchcolors) + ';">'
+	$('.such.overlay').append(
+		'<span style="position: absolute; left: ' + Math.random()  *100 + '%;top: ' + Math.random()  *100 + '%;font-size: ' + Math.max(20, (Math.random() * 50 + 24)) + 'px; color:' + muchrandom(suchcolors) + ';">'
 		+ muchrandom(dogefix) + ' ' + muchrandom(tings) + 
-	'</span>');
+		'</span>'
+	);
 	var suchnumber = $("span").length;
 	if (suchnumber > 6)
 		$('.such span:nth-child(1)').remove();
