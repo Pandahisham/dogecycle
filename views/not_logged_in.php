@@ -1,17 +1,17 @@
 <script>
 function toggleForm(such, doge, wow) {
-	if (document.getElementById(such).style.display == 'none') {
-		document.getElementById(such).style.display = '';
-		document.getElementById(doge).style.display = 'none';
-		document.getElementById(wow).focus();
+	$('#feedback').hide();
+	if ($(such).css('display') == 'none') {
+		$(doge).hide();
+		$(such).fadeIn(500);
+		$(wow).focus();
 	} else
-		document.getElementById(such).style.display = 'none';
-	document.getElementById('feedback').style.display = 'none';
+		$(such).hide();
 }
 </script>
 
 <div id="such_options">
-<div class="padded_right"><b><a onClick="toggleForm('login_form','registration_form','login_input_username');return false;" href="">login</a></b> • <a onClick="toggleForm('registration_form','login_form','register_input_username');return false;" href="">register</a></div>
+<div class="padded_right"><b><a onClick="toggleForm('#login_form','#registration_form','#login_input_username');return false;" href="">login</a></b> • <a onClick="toggleForm('#registration_form','#login_form','#register_input_username');return false;" href="">register</a></div>
 <div id="feedback">
 <?php
 if (isset($login)) {

@@ -1,4 +1,19 @@
-<div id="such_options" onMouseOver="document.getElementById('options').style.display='';" onMouseOut="document.getElementById('options').style.display='none';">
+<script>
+$(document).ready(function(){
+	$("#such_options").hover(
+		function() {
+			$('#options').stop().fadeOut(200);
+			$('#options').fadeIn(400);
+		},
+		function() {
+			$('#options').fadeIn(400);
+			$('#options').stop().fadeOut(200);
+		}
+	);
+});
+</script>
+
+<div id="such_options">
 <div class="padded_right">very <b><?php echo $_SESSION['user_name']; ?></b> • <a href="../index.php?logout">bye bye</a></div>
 <div id="options" style="display:none;">
 	<br />

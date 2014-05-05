@@ -1,13 +1,10 @@
 <?php
 if (isset($_POST['add_cycle'])) {
-	$start_date_value = $_POST['start_date'];
-	if (strlen($_POST['end_date']))
-		$end_date_value = $_POST['end_date'];
-	else
-		$end_date_value = "0000-00-00";
+	$start_date_value = (strlen($_POST['start_date'])) ? $_POST['start_date'] : "0000-00-00";
+	$end_date_value   = (strlen($_POST['end_date']))   ? $_POST['end_date']   : "0000-00-00";
 
 	if ((strtotime($start_date_value) <= time() and strtotime($end_date_value) <= time()) and  // wow foresight
-		($start_date_value < $end_date_value or $end_date_value == "0000-00-00")) {
+		($start_date_value < $end_date_value or $end_date_value == "0000-00-00") and $start_date_value != "0000-00-00") {
 		$db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 		if (!mysqli_connect_errno()) {
 			if ($end_date_value == "0000-00-00") {

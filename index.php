@@ -46,6 +46,8 @@ else
 		<meta property="og:image:width" content="600">
 		<meta property="og:image:height" content="600">
 		<link href="styles.css" rel="stylesheet" text="text/css" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="./jquery-1.9.0.min.js"><\/script>')</script>
 	</head>
 	<body class="bg">
 		<div id="fb-root"></div>
@@ -78,8 +80,6 @@ else
 		<div id="suchsecrets"><?php include("cycle.php"); ?></div>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		<script>if (typeof window.history.pushState == 'function') { window.history.pushState({}, "Hide", "./"); }</script>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="./jquery-1.9.0.min.js"><\/script>')</script>
 		<script src="./main.js"></script>
 	</body>
 </html>
